@@ -64,6 +64,8 @@ public class DashboardConfig {
      */
     public static final String CONFIG_AUTO_REMOVE_MACHINE_MILLIS = "sentinel.dashboard.autoRemoveMachineMillis";
 
+    public static final String CONFIG_ZOOKEEPER = "sentinel.dashboard.zookeeper.host";
+
     private static final ConcurrentMap<String, Object> cacheMap = new ConcurrentHashMap<>();
     
     @NonNull
@@ -132,6 +134,10 @@ public class DashboardConfig {
     
     public static int getUnhealthyMachineMillis() {
         return getConfigInt(CONFIG_UNHEALTHY_MACHINE_MILLIS, DEFAULT_MACHINE_HEALTHY_TIMEOUT_MS, 30000);
+    }
+
+    public static String getZookeeperHost() {
+        return getConfigStr(CONFIG_ZOOKEEPER);
     }
     
     public static void clearCache() {
