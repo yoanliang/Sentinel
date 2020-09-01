@@ -37,7 +37,6 @@ public class FlowRuleZookeeperPublisher implements DynamicRulePublisher<List<Flo
 
     @Override
     public void publish(String app, List<FlowRuleEntity> rules) throws Exception {
-        System.out.println("zk publish");
         AssertUtil.notEmpty(app, "app name cannot be empty");
 
         String path = ZookeeperConfigUtil.getPath(app);
